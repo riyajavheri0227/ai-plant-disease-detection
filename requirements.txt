@@ -1,0 +1,6 @@
+Django
+gunicorn
+pillow
+requests
+python-dotenv
+onnxruntime
