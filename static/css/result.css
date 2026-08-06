@@ -1,0 +1,144 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    background:#f1f8f3;
+
+}
+
+
+
+.result-container{
+
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+
+}
+
+
+
+.search-section{
+
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.search-section h1{
+
+    color:#2e7d32;
+    text-align:center;
+    margin-bottom:20px;
+
+}
+
+
+
+.search-box{
+
+    display:flex;
+    gap:10px;
+
+}
+
+
+
+.search-box input{
+
+    flex:1;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px;
+
+}
+
+
+
+.search-box button{
+
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#2e7d32;
+    color:white;
+    cursor:pointer;
+
+}
+
+
+
+.result-card{
+
+    margin-top:30px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.result-card h2{
+
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:25px;
+
+}
+
+
+
+.plant-image{
+
+    text-align:center;
+
+}
+
+
+
+.plant-image img{
+
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+
+}
+
+
+
+.disease-info{
+
+    margin-top:25px;
+
+}
+
+
+
+.disease-info h3{
+
+    color:#1b5e20;
+    margin-bottom:15px;
+
+}
+
+
+
+.disease-info p{
+
+    line-height:1.6;
+    margin-bottom:12px;
+
+}

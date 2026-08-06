@@ -1,0 +1,297 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Plant Disease Detection</title>
+
+    <link rel="stylesheet" href="{% static 'css/aiscan.css' %}">
+
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="scan-page">
+
+
+
+    <!-- Header -->
+
+    <div class="scan-header">
+
+        <div>
+
+            <h1>
+                AI Plant Disease Detection 🌱
+            </h1>
+
+            <p>
+                Upload a plant leaf image and detect diseases using Artificial Intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="header-icon">
+
+            <i class="fa-solid fa-robot"></i>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Upload Section -->
+
+
+    <div class="scan-container">
+
+
+        <div class="upload-card">
+
+
+            <div class="upload-icon">
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            </div>
+
+
+
+            <h2>
+                Upload Plant Image
+            </h2>
+
+
+            <p>
+                Choose a clear leaf image for accurate disease detection.
+            </p>
+
+
+
+            <div class="image-box">
+
+
+                <i class="fa-solid fa-image"></i>
+
+                <span>
+                    No image selected
+                </span>
+
+
+            </div>
+
+
+
+            <button class="upload-btn">
+
+                <i class="fa-solid fa-upload"></i>
+                Select Image
+
+            </button>
+
+
+
+
+            <button class="scan-btn">
+
+                <i class="fa-solid fa-microscope"></i>
+                Scan Plant
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- Result Section -->
+
+
+        <div class="result-card">
+
+
+            <h2>
+                Detection Result
+            </h2>
+
+
+
+            <div class="result-image">
+
+                🌿
+
+            </div>
+
+
+
+            <div class="result-info">
+
+
+                <h3>
+                    Tomato Plant
+                </h3>
+
+
+                <p>
+                    Disease:
+                    <strong>
+                        Early Blight
+                    </strong>
+                </p>
+
+
+
+                <div class="confidence">
+
+                    <span>
+                        Confidence
+                    </span>
+
+
+                    <b>
+                        94%
+                    </b>
+
+
+                </div>
+
+
+
+                <div class="progress">
+
+                    <div></div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Disease Details -->
+
+
+    <div class="disease-details">
+
+
+
+        <div class="info-box">
+
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+
+            <h3>
+                Symptoms
+            </h3>
+
+
+            <p>
+                Yellow spots, leaf damage and early leaf falling.
+            </p>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="info-box">
+
+
+            <i class="fa-solid fa-leaf"></i>
+
+
+            <h3>
+                Cause
+            </h3>
+
+
+            <p>
+                Fungal infection caused due to environmental conditions.
+            </p>
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="info-box">
+
+
+            <i class="fa-solid fa-seedling"></i>
+
+
+            <h3>
+                Treatment
+            </h3>
+
+
+            <p>
+                Use proper care, remove infected leaves and apply suitable treatment.
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5fff5;
+padding:50px;
+}
+
+h1{
+text-align:center;
+color:green;
+margin-bottom:40px;
+font-size:45px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:50px;
+color:green;
+margin-bottom:20px;
+}
+
+.card h2{
+margin-bottom:15px;
+}
+
+.card p{
+color:#555;
+line-height:1.6;
+}

@@ -1,0 +1,411 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',Arial,sans-serif;
+}
+
+
+body{
+
+    background:#f5f8f5;
+    color:#333;
+
+}
+
+
+
+.scan-page{
+
+    padding:35px;
+
+}
+
+
+
+
+
+
+/* Header */
+
+
+.scan-header{
+
+    background:#1f6b3a;
+    color:white;
+    padding:30px;
+    border-radius:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+
+}
+
+
+
+.scan-header h1{
+
+    font-size:32px;
+    margin-bottom:10px;
+
+}
+
+
+
+.scan-header p{
+
+    opacity:.9;
+
+}
+
+
+
+.header-icon{
+
+    height:80px;
+    width:80px;
+    background:rgba(255,255,255,.2);
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+
+}
+
+
+
+
+
+
+
+
+
+/* Main Cards */
+
+
+.scan-container{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+
+}
+
+
+
+
+
+
+
+.upload-card,
+.result-card{
+
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+}
+
+
+
+
+.upload-card{
+
+    text-align:center;
+
+}
+
+
+
+
+.upload-icon{
+
+    height:70px;
+    width:70px;
+    margin:auto;
+    background:#ddf5e4;
+    color:#1f6b3a;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    margin-bottom:20px;
+
+}
+
+
+
+.upload-card h2{
+
+    color:#1f6b3a;
+    margin-bottom:10px;
+
+}
+
+
+
+.upload-card p{
+
+    color:#777;
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+
+.image-box{
+
+    height:170px;
+    border:2px dashed #b7d9c0;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    color:#888;
+    margin-bottom:20px;
+
+}
+
+
+
+.image-box i{
+
+    font-size:40px;
+    color:#1f6b3a;
+
+}
+
+
+
+
+
+
+
+
+button{
+
+    border:none;
+    padding:14px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:15px;
+    margin:5px;
+
+}
+
+
+
+.upload-btn{
+
+    background:#e7f5eb;
+    color:#1f6b3a;
+
+}
+
+
+
+.scan-btn{
+
+    background:#1f6b3a;
+    color:white;
+
+}
+
+
+
+
+
+
+
+
+/* Result */
+
+
+.result-card h2{
+
+    color:#1f6b3a;
+    margin-bottom:25px;
+
+}
+
+
+
+.result-image{
+
+    height:130px;
+    width:130px;
+    border-radius:25px;
+    background:#eef8ee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    margin-bottom:20px;
+
+}
+
+
+
+
+.result-info h3{
+
+    font-size:24px;
+    margin-bottom:15px;
+
+}
+
+
+
+.result-info p{
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+.confidence{
+
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+
+}
+
+
+
+
+.confidence b{
+
+    color:#1f6b3a;
+
+}
+
+
+
+.progress{
+
+    height:12px;
+    background:#e5e5e5;
+    border-radius:20px;
+    overflow:hidden;
+
+}
+
+
+
+.progress div{
+
+    height:100%;
+    width:94%;
+    background:#1f6b3a;
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+
+
+/* Disease Information */
+
+
+.disease-details{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:30px;
+
+}
+
+
+
+
+.info-box{
+
+    background:white;
+    padding:25px;
+    border-radius:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+
+
+.info-box i{
+
+    font-size:30px;
+    color:#1f6b3a;
+    margin-bottom:15px;
+
+}
+
+
+
+.info-box h3{
+
+    margin-bottom:10px;
+
+}
+
+
+
+.info-box p{
+
+    color:#777;
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px){
+
+
+.scan-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.disease-details{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.scan-header{
+
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+
+}
+
+
+}

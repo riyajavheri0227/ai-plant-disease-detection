@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Plants</title>
+
+<link rel="stylesheet" href="{% static 'css/myplants.css' %}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌿 My Plants</h1>
+
+<p>Your saved plants and disease information.</p>
+<a href="{% url 'dashboard' %}" class="dashboard-btn">
+    ← Back to Dashboard
+</a>
+
+</header>
+
+<div class="container">
+
+    <!-- Empty State -->
+
+
+
+    {% if myplants %}
+
+<div class="disease-container">
+
+    {% for item in myplants %}
+
+    <div class="disease-card">
+
+        <img src="{% static 'images/' %}{{ item.plant.page_name }}1.jpeg" alt="{{ item.plant.name }}">
+
+        <div class="card-content">
+
+            <h3>{{ item.plant.name }}</h3>
+
+            <p>🌿 Saved Plant</p>
+
+            <span class="health-status">
+                Healthy
+            </span>
+
+            <div class="card-buttons">
+
+                <a href="{% url item.plant.page_name %}" class="view-btn">
+    View Details
+</a>
+
+                <a href="{% url 'delete_myplant' item.plant.id %}" class="delete-btn"
+   onclick="return confirm('Delete this plant?')">
+    Delete Plant
+</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% else %}
+<div class="empty-box">
+
+    <div class="plant-icon">🌱</div>
+
+    <h2>No Plants Added Yet</h2>
+
+    <p>
+        Start building your plant collection by adding your favourite plants.
+    </p>
+
+    <a href="{% url 'diseases' %}">
+        <button>+ Add Your First Plant</button>
+    </a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

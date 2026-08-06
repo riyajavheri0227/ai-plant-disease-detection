@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | PlantCare</title>
+
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+
+        <h1>🌿 PlantCare</h1>
+
+        <h2>Join PlantCare</h2>
+
+        <p>
+            Create your account and detect plant diseases
+            instantly using Artificial Intelligence.
+        </p>
+
+        <div class="feature">
+            <i class="fas fa-leaf"></i>
+            <div>
+                <h3>AI Disease Detection</h3>
+                <p>Identify plant diseases quickly.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-stethoscope"></i>
+            <div>
+                <h3>Instant Results</h3>
+                <p>Get disease prediction in seconds.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-book-open"></i>
+            <div>
+                <h3>Disease Information</h3>
+                <p>Learn causes and treatments easily.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right">
+
+        <h2>Create Account</h2>
+        {% if messages %}
+    {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+        <form  method="POST">
+
+            {% csrf_token %}
+
+            <input type="text" name="full_name" placeholder="Full Name" required>
+
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="login-text">
+            Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

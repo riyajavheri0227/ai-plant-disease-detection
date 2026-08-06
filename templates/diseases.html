@@ -1,0 +1,399 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Diseases - PlantCare</title>
+
+    <link rel="stylesheet" href="{% static 'css/diseases.css' %}">
+</head>
+
+<body>
+
+<section class="disease-page">
+
+    <h1>Plant Diseases</h1>
+
+    <p class="tagline">
+        Learn about common plant diseases, their symptoms, and treatment methods.
+    </p>
+
+
+    <div class="disease-container">
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/sunflower1.jpeg' %}">
+            <h2>Sunflower</h2>
+            <p>Plant Diseases</p>
+           <div class="card-buttons">
+
+    <a href="{% url 'sunflower' %}" class="view-btn">
+        View Details
+    </a>
+
+    {% if 1 in saved_plants %}
+
+<a href="{% url 'delete_myplant' 1 %}" class="delete-btn">
+    Delete Plant
+</a>
+
+{% else %}
+
+<a href="{% url 'add_myplant' 1 %}"
+   class="add-btn"
+   onclick="return confirm('Add this plant to My Plants?')">
+    Add Plant
+</a>
+
+{% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+    <img src="{% static 'images/tomato1.jpeg' %}">
+    <h2>Tomato</h2>
+    <p>Plant Diseases</p>
+
+    <div class="card-buttons">
+
+        <a href="{% url 'tomato' %}" class="view-btn">
+            View Details
+        </a>
+
+        {% if 2 in saved_plants %}
+
+        <a href="{% url 'delete_myplant' 2 %}" class="delete-btn">
+            Delete Plant
+        </a>
+
+        {% else %}
+
+        <a href="{% url 'add_myplant' 2 %}"
+           class="add-btn"
+           onclick="return confirm('Add this plant to My Plants?')">
+            Add Plant
+        </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/hibiscus1.jpeg' %}">
+            <h2>Hibiscus</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'hibiscus' %}" class="view-btn">
+        View Details
+    </a>
+
+    {% if 3 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 3 %}" class="delete-btn">
+        Delete Plant
+    </a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 3 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/neem1.jpeg' %}">
+            <h2>Neem</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'neem' %}" class="view-btn">View Details</a>
+
+    {% if 4 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 4 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 4 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/mango1.jpeg' %}">
+            <h2>Mango</h2>
+            <p>Plant Diseases</p>
+          <div class="card-buttons">
+
+    <a href="{% url 'mango' %}" class="view-btn">View Details</a>
+
+    {% if 5 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 5 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 5 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/gauva1.jpeg' %}">
+            <h2>Guava</h2>
+            <p>Plant Diseases</p>
+           <div class="card-buttons">
+
+    <a href="{% url 'guava' %}" class="view-btn">View Details</a>
+
+    {% if 6 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 6 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 6 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/banana1.jpeg' %}">
+            <h2>Banana</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'banana' %}" class="view-btn">View Details</a>
+
+    {% if 7 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 7 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 7 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/coconut1.jpeg' %}">
+            <h2>Coconut</h2>
+            <p>Plant Diseases</p>
+           <div class="card-buttons">
+
+    <a href="{% url 'coconut' %}" class="view-btn">View Details</a>
+
+    {% if 8 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 8 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 8 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/banyan1.jpeg' %}">
+            <h2>Banyan</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'banyan' %}" class="view-btn">View Details</a>
+
+    {% if 9 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 9 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 9 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/ashoka1.jpeg' %}">
+            <h2>Ashoka</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'ashoka' %}" class="view-btn">View Details</a>
+
+    {% if 10 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 10 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 10 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/haldi1.jpeg' %}">
+            <h2>Haldi</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'haldi' %}" class="view-btn">View Details</a>
+
+    {% if 11 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 11 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 11 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/lotus1.jpeg' %}">
+            <h2>Lotus</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'lotus' %}" class="view-btn">View Details</a>
+
+    {% if 12 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 12 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 12 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/aloe_vera1.jpeg' %}">
+            <h2>Aloe Vera</h2>
+            <p>Plant Diseases</p>
+           <div class="card-buttons">
+
+    <a href="{% url 'aloe_vera' %}" class="view-btn">View Details</a>
+
+    {% if 13 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 13 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 13 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+        <div class="disease-card">
+            <img src="{% static 'images/papaya1.jpeg' %}">
+            <h2>Papaya</h2>
+            <p>Plant Diseases</p>
+            <div class="card-buttons">
+
+    <a href="{% url 'papaya' %}" class="view-btn">View Details</a>
+
+    {% if 14 in saved_plants %}
+
+    <a href="{% url 'delete_myplant' 14 %}" class="delete-btn">Delete Plant</a>
+
+    {% else %}
+
+    <a href="{% url 'add_myplant' 14 %}" class="add-btn"
+       onclick="return confirm('Add this plant to My Plants?')">
+        Add Plant
+    </a>
+
+    {% endif %}
+
+</div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</body>
+</html>

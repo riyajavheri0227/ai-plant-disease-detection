@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scan Plant - AI Plant Disease Detection</title>
+
+<link rel="stylesheet" href="{% static 'css/scanplant.css' %}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="scan-container">
+
+    <div class="scan-card">
+
+        <h1>
+            <i class="fa-solid fa-leaf"></i>
+            AI Plant Disease Detection
+        </h1>
+
+        <p>
+            Upload a clear leaf image to detect plant diseases.
+        </p>
+        {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+{% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+           {% csrf_token %}
+
+            <div class="preview-box">
+
+                <img id="previewImage">
+
+                <div id="placeholder">
+
+                    <i class="fa-solid fa-image"></i>
+
+                    <h3>No Image Selected</h3>
+
+                </div>
+
+            </div>
+
+            <input
+type="file"
+id="imageInput"
+name="plant_image"
+accept="image/*"
+hidden
+required>
+
+            <label for="imageInput" class="upload-btn">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Choose Image
+
+            </label>
+
+            <div class="buttons">
+
+                <button type="submit" class="detect-btn">
+                    Detect Disease
+                </button>
+
+                <button
+                type="button"
+                class="remove-btn"
+                onclick="removeImage()">
+                    Remove
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+const input=document.getElementById("imageInput");
+const preview=document.getElementById("previewImage");
+const placeholder=document.getElementById("placeholder");
+
+input.onchange=function(){
+
+const file=this.files[0];
+
+if(file){
+
+preview.src=URL.createObjectURL(file);
+
+preview.style.display="block";
+
+placeholder.style.display="none";
+
+}
+
+}
+
+function removeImage(){
+
+preview.src="";
+
+preview.style.display="none";
+
+placeholder.style.display="flex";
+
+input.value="";
+
+}
+
+</script>
+
+</body>
+
+</html>

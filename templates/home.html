@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <!-- We will replace this icon with your logo later -->
+        <div class="logo-box">
+    <img src="{% static 'images/logo.jpeg' %}" alt="Logo">
+</div>
+
+        <div>
+            <h2>Plant Disease Detection</h2>
+            <p>Detect • Diagnose • Protect</p>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'features' %}">Features</a>
+        <a href="{% url 'contacts' %}">Contact</a>
+        <a href="{% url 'login' %}">Login</a>
+        
+
+    </nav>
+
+    <a href="{% url 'register' %}">
+    <button class="start-btn">
+        Get Started
+    </button>
+</a>
+    
+</header>
+
+<section class="hero">
+
+    <div class="content">
+
+        <h1>
+            Healthy Plants,<br>
+            <span>Better Tomorrow.</span>
+        </h1>
+
+        <p>
+            Upload a leaf image and our AI will detect plant diseases,
+            provide treatment suggestions, and help keep your plants healthy.
+        </p>
+
+        <div class="buttons">
+
+            <a href="{% url 'scanplant' %}">
+            <button class="green">
+                Scan Plant
+            </button>
+            </a>
+
+
+        </div>
+        <div class="cards">
+
+    <div class="card">
+        <i class="fa-solid fa-microscope"></i>
+        <h3>AI Detection</h3>
+        <p>Detect plant diseases quickly using AI technology.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Disease Library</h3>
+        <p>View disease details, symptoms, and treatments.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-shield-heart"></i>
+        <h3>Healthy Plants</h3>
+        <p>Help protect your plants with early disease detection.</p>
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="image">
+
+        <!-- We'll add your plant image later -->
+        <img src="{% static 'images/plant.jpeg' %}" alt="Plant">
+
+    </div>
+
+</section>
+
+</body>
+</html>

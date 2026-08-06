@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - PlantCare</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+
+<div class="about-container">
+
+    <div class="about-text">
+        <h1>About PlantCare</h1>
+
+        <p>
+            PlantCare is an AI-based Plant Disease Detection website that helps users identify plant diseases quickly and accurately.
+            Users can upload a leaf image, and the system analyzes it to detect the disease and provide treatment suggestions.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is to support farmers and gardeners by providing fast, easy, and reliable plant disease detection using Artificial Intelligence.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>🌿 Upload Plant Image</li>
+            <li>🤖 AI Disease Detection</li>
+            <li>💊 Treatment Suggestions</li>
+            <li>📊 Easy to Use Interface</li>
+        </ul>
+
+    </div>
+
+    <div class="about-image">
+        <img src="{% static 'images/plant.jpeg' %}" alt="Plant">
+    </div>
+
+</div>
+
+</body>
+</html>

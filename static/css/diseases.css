@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+    background:#f5fff5;
+}
+
+
+.disease-page{
+    padding:50px;
+    text-align:center;
+}
+
+
+.disease-page h1{
+    font-size:45px;
+    color:#2e7d32;
+}
+
+
+.tagline{
+    margin-top:15px;
+    font-size:18px;
+    color:#555;
+    margin-bottom:40px;
+}
+
+
+.disease-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+
+.disease-card{
+
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.disease-card img{
+
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    margin:0 auto;
+
+}
+
+
+.disease-card h2{
+
+    margin-top:15px;
+    color:#2e7d32;
+
+}
+
+
+.disease-card p{
+
+    margin:10px 0;
+    color:#666;
+    font-size:17px;
+
+}
+
+
+.disease-card button{
+
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+.disease-card button:hover{
+
+    background:#1b5e20;
+
+}
+
+.view-btn{
+    display:inline-block;
+    background:#2e7d32;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    background:#1b5e20;
+}
+
+.card-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+.card-buttons a{
+    width:160px;
+    text-align:center;
+}
+
+
+.add-btn{
+    display:inline-block;
+    background:#388e3c;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+
+.add-btn:hover{
+    background:#388e3c;
+}
+
+.delete-btn{
+    display:inline-block;
+    background:#d32f2f;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.delete-btn:hover{
+    background:#b71c1c;
+}

@@ -1,0 +1,462 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Plant Disease Detection - Dashboard</title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+            <div class="logo">
+                <img src="{% static 'images/logo.jpeg' %}" alt="Logo">
+            </div>
+
+            <div>
+                <h2>Plant AI</h2>
+                <p>Disease Detection</p>
+            </div>
+
+        </div>
+
+
+
+        <nav>
+
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+
+            <a href="{% url 'scanplant' %}">
+                <i class="fa-solid fa-camera"></i>
+                Scan Plant
+            </a>
+
+
+            <a href="{% url 'myplants' %}">
+                <i class="fa-solid fa-seedling"></i>
+                My Plants
+            </a>
+
+
+            <a href="{% url 'diseases' %}">
+                <i class="fa-solid fa-virus"></i>
+                Plant Diseases
+            </a>
+
+
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+
+            <a href="{% url 'home' %}">
+                <i class="fa-solid fa-home"></i>
+                Home
+            </a>
+
+
+
+            <a href="#" onclick="openLogout()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</a>
+
+
+         
+
+
+        </nav>
+
+
+
+        <div class="sidebar-bottom">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <h3>Keep Plants Healthy</h3>
+
+            <p>
+                Detect diseases early with AI
+            </p>
+
+        </div>
+
+
+    </aside>
+
+
+
+
+
+
+
+    <!-- Main Section -->
+
+    <main class="content">
+
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+
+            <div>
+
+                <h1>
+    Welcome Back, {{ request.user.first_name }} 🌱
+</h1>
+
+                <p>
+                    Monitor your plants and detect diseases easily.
+                </p>
+
+            </div>
+
+
+
+            <div class="user-area">
+
+                <!-- Disease Search Button -->
+    <a href="{% url 'result' %}" class="disease-search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Disease Search
+    </a>
+
+
+               
+
+
+              <div class="profile">
+
+    {% if profile.photo %}
+    <img src="{{ profile.photo.url }}" alt="Profile">
+{% else %}
+    <i class="fa-solid fa-user"></i>
+{% endif %}
+
+</div>
+
+<div class="user-info">
+    <h3>{{ request.user.first_name }}</h3>
+    <p>USER</p>
+</div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+
+
+
+
+
+        <!-- Dashboard Cards -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+
+                <div class="card-icon green">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                </div>
+
+
+                <div>
+
+                   <h2>{{ scan_count }}</h2>
+
+                    <p>Plant Scans</p>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            
+
+
+
+
+
+            <div class="stat-card">
+
+
+                <div class="card-icon blue">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>{{ myplant_count }}</h2>
+
+                    <p>My Plants</p>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Recent Disease Detection -->
+
+
+        <section class="panel">
+
+
+            <div class="panel-title">
+
+                <h2>Recent Detection</h2>
+
+
+            </div>
+
+
+
+
+            {% for scan in recent_scans %}
+
+<div class="detection">
+
+    <div class="plant-photo">
+        🌿
+    </div>
+
+    <div class="details">
+        <h3>{{ scan.disease_name }}</h3>
+        <p>{{ scan.plant_name }}</p>
+    </div>
+
+    <span class="danger">
+        Detected
+    </span>
+
+</div>
+
+{% empty %}
+
+<p>No scans yet.</p>
+
+{% endfor %}
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <!-- Quick Actions -->
+
+
+        <section class="quick-action">
+
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+
+            <div class="actions">
+
+
+
+                <a href="{% url 'scanplant' %}" class="action-card">
+
+
+                    <i class="fa-solid fa-camera"></i>
+
+
+                    <h3>
+                        Scan Plant
+                    </h3>
+
+
+                    <p>
+                        Upload leaf image
+                    </p>
+
+
+                </a>
+
+
+
+
+
+                <a href="{% url 'myplants' %}" class="action-card">
+
+    <i class="fa-solid fa-seedling"></i>
+
+    <h3>
+        My Plants
+    </h3>
+
+    <p>
+        Manage plants
+    </p>
+
+</a>
+
+
+ 
+
+                 <a href="{% url 'diseases' %}" class="action-card">
+
+
+                    <i class="fa-solid fa-book-open"></i>
+
+
+                    <h3>
+                        Disease Library
+                    </h3>
+
+
+                    <p>
+                        Learn diseases
+                    </p>
+
+
+                </a>
+
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+    </main>
+
+
+</div>
+
+<script>
+function confirmLogout() {
+
+    let result = confirm("Are you sure you want to logout?");
+
+    if (result) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+</script>
+
+<!-- Logout Popup -->
+
+<div id="logoutPopup" class="logout-popup">
+
+    <div class="logout-box">
+
+        <h2>Logout</h2>
+
+        <p>Are you sure you want to logout?</p>
+
+        <div class="logout-buttons">
+
+            <button onclick="closeLogout()">
+                Cancel
+            </button>
+
+            <a href="{% url 'logout' %}">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function openLogout(){
+    document.getElementById("logoutPopup").style.display="flex";
+}
+
+function closeLogout(){
+    document.getElementById("logoutPopup").style.display="none";
+}
+
+</script>
+
+</body>
+
+</html>
