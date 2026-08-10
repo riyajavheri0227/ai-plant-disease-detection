@@ -1,144 +1,150 @@
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Disease Result - AI Plant Disease Detection</title><link rel="stylesheet" href="{% static 'css/result.css' %}"><link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></head><body><div class="result-container"><div class="search-section">
 
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Disease Result - AI Plant Disease Detection</title>
-
-<link rel="stylesheet" href="{% static 'css/result.css' %}">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-</head>
+    <h1>
+        <i class="fa-solid fa-leaf"></i>
+        Plant Disease Search
+    </h1>
 
 
-<body>
+    <form method="POST" action="{% url 'scanplant' %}" class="search-box">
 
+        {% csrf_token %}
 
-<div class="result-container">
+        <input 
+            type="text" 
+            name="search_disease"
+            value="{{ disease_name }}"
+            placeholder="Search disease name...">
 
+        <button type="submit">
+            <i class="fa-solid fa-search"></i>
+            Search
+        </button>
 
-    <div class="search-section">
-
-        <h1>
-            <i class="fa-solid fa-leaf"></i>
-            Plant Disease Search
-        </h1>
-
-
-      <form method="POST" action="{% url 'scanplant' %}" class="search-box">
-
-    {% csrf_token %}
-
-    <input 
-    type="text" 
-    name="search_disease"
-    value="{{ disease_name }}"
-    placeholder="Search disease name...">
-
-
-    <button type="submit">
-        <i class="fa-solid fa-search"></i>
-        Search
-    </button>
-
-</form>
-
-
-    </div>
-
-
-
-    <div class="result-card">
-
-
-        <h2>
-            Detection Result
-        </h2>
-
-
-        <div class="plant-image">
-
-           {% if uploaded_image %}
-    <img src="{{ uploaded_image }}" alt="Plant Image">
-{% endif %}
-
-        </div>
-
-
-
-       <div class="disease-info">
-
-    <h3>
-        {{ disease_name }}
-    </h3>
-
-
-    {% if disease_info %}
-
-        <p>
-            <strong>Plant:</strong>
-            {{ disease_info.plant_name }}
-        </p>
-
-
-        <p>
-            <strong>Symptoms:</strong>
-            {{ disease_info.symptoms }}
-        </p>
-
-
-        <p>
-            <strong>Causes:</strong>
-            {{ disease_info.causes }}
-        </p>
-
-
-        <p>
-            <strong>Treatment:</strong>
-            {{ disease_info.treatment }}
-        </p>
-
-
-        <p>
-            <strong>Prevention:</strong>
-            {{ disease_info.prevention }}
-        </p>
-
-
-    {% elif api_data.data %}
-
-        <p>
-            API information found.
-        </p>
-
-
-    {% else %}
-
-        <p>
-            Disease information is not available yet.
-        </p>
-
-
-    {% endif %}
+    </form>
 
 
 </div>
 
 
+
+<div class="result-card">
+
+
+    <h2>
+        Detection Result
+    </h2>
+
+
+    <div class="plant-image">
+
+        {% if uploaded_image %}
+            <img src="{{ uploaded_image }}" alt="Plant Image">
+        {% endif %}
+
     </div>
 
 
 
+    <div class="disease-info">
+
+        <h3>
+            {{ disease_name }}
+        </h3>
+
+
+        <!-- AI Confidence -->
+
+        {% if confidence is not None %}
+
+            <div class="confidence-box">
+
+                <p>
+                    <strong>Confidence Level:</strong>
+                    {{ confidence|floatformat:2 }}%
+                </p>
+
+                {% if confidence >= 50 %}
+
+                    <p class="high-confidence">
+                        <i class="fa-solid fa-circle-check"></i>
+                        High Confidence
+                    </p>
+
+                {% else %}
+
+                    <p class="low-confidence">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Low Confidence
+                    </p>
+
+                    <p>
+                        This prediction may not be accurate. Please verify the result before taking action.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        {% endif %}
+
+
+        {% if disease_info %}
+
+            <p>
+                <strong>Plant:</strong>
+                {{ disease_info.plant_name }}
+            </p>
+
+
+            <p>
+                <strong>Symptoms:</strong>
+                {{ disease_info.symptoms }}
+            </p>
+
+
+            <p>
+                <strong>Causes:</strong>
+                {{ disease_info.causes }}
+            </p>
+
+
+            <p>
+                <strong>Treatment:</strong>
+                {{ disease_info.treatment }}
+            </p>
+
+
+            <p>
+                <strong>Prevention:</strong>
+                {{ disease_info.prevention }}
+            </p>
+
+
+        {% elif api_data.data %}
+
+            <p>
+                API information found.
+            </p>
+
+
+        {% else %}
+
+            <p>
+                Disease information is not available yet.
+            </p>
+
+
+        {% endif %}
+
+
+    </div>
+
+
 </div>
 
-
-</body>
-
-</html>
+</div></body></html>

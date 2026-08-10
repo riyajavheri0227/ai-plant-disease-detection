@@ -200,6 +200,8 @@ def scanplant(request):
     message = ""
     
     uploaded_image = None
+    confidence = None
+    confidence_status = ""
 
     if request.method == "POST":
 
@@ -235,14 +237,15 @@ def scanplant(request):
 
 
             disease_name, confidence = predict_disease(image_path)
-            if confidence < 50:
-                messages.warning(
-                    request,
-                    "⚠️ Sorry! This AI currently supports only Tomato, Potato, and Pepper plant diseases. Please upload a supported plant image."
-                 )
-                return redirect("scanplant")
-                print("Confidence:", confidence)
+
+            print("Confidence:", confidence)
+
             plant_name = disease_name.split("_")[0]
+
+            if confidence >= 50:
+                confidence_status = "High Confidence"
+            else:
+                confidence_status = "Low Confidence"
 
             print("Detected Disease:", disease_name)
 
@@ -308,6 +311,9 @@ def scanplant(request):
             "api_data": api_data,
             "message": message,
             "uploaded_image": uploaded_image,
+            "confidence": confidence,
+            "confidence_status": confidence_status,
+
 
         })
 

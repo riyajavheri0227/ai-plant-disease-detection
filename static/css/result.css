@@ -142,3 +142,22 @@ body{
     margin-bottom:12px;
 
 }
+
+.confidence-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f5f8f5;
+}
+
+.high-confidence {
+    font-weight: bold;
+}
+
+.low-confidence {
+    font-weight: bold;
+}
+
+.confidence-box p {
+    margin: 8px 0;
+}
