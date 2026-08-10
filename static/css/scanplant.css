@@ -113,3 +113,39 @@ font-size:15px;
 .remove-btn:hover{
 background:#d32f2f;
 }
+
+/* Supported Plants Information */
+
+.support-info {
+    width: 100%;
+    max-width: 650px;
+    margin-top: 20px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #f4f8f5;
+    border: 1px solid #d7e8dc;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.support-icon {
+    font-size: 22px;
+    margin-top: 2px;
+}
+
+.support-text h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+.support-text p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.support-text strong {
+    font-weight: 600;
+}
